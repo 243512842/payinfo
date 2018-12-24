@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>个人支付测试</title>
+		
+		<!--favicon -->
+		<link rel="icon" href="__STATIC__/index/favicon.ico" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/bootstrap/css/bootstrap.min.css">
+		
+		<!--Icons css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/css/icons.css">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/css/style.css">
+
+		<!--mCustomScrollbar css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/toggle-menu/sidemenu.css">
+
+	</head>
+
+	<body class="bg-primary">
+		<div id="app">
+			<section class="section">
+				<div class="container">
+					<div class="row">
+						<div class="single-page construction-bg single-pageimage cover-image" data-image-src="__STATIC__/index/assets/img/news/img14.jpg">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="wrapper wrapper2">
+										<form  class="card-body" tabindex="500" action="{:url('Pay/order')}" method="POST">
+											<h3>支付体验测试</h3>
+											<div class="mail">
+												<input type="text" name="username">
+												<label>用户名</label>
+											</div>
+											<div class="passwd">
+												<input type="text" name="d_price">
+												<label>支付金额</label>
+                                            </div>
+                                            <div class="passwd">
+												<select class="form-control" name="type">
+                                                    <option value="1">支付宝</option>
+                                                    <option value="2">微信</option>
+                                                    <option value="3">QQ支付</option>
+                                                </select>
+												<label>支付方式</label>
+                                            </div>
+                                            <div class="mail">
+												<input type="email" name="email">
+												<label>通知邮箱[用于支付结果通知]</label>
+                                            </div>
+                                            <div class="mail">
+												<input type="number" name="mobile">
+												<label>通知手机号[用于支付结果通知]</label>
+                                            </div>
+                                            <div><img src="{:captcha_src()}" alt="captcha" onClick="this.src=this.src+'?'+Math.random()" /></div>
+                                            <div class="mail">
+												<input type="text" name="imgcode">
+												<label>图形验证码</label>
+                                            </div>
+											<div class="submit">
+												<button class="btn btn-primary btn-block">提交订单</button>
+											</div>
+											<!-- <p class="text-dark mb-0">Already have account?<a href="login.html" class="text-primary ml-1">Sign In</a></p> -->
+											
+										</form>
+										<!-- <div class="card-body border-top">
+											<a class="btn  btn-social btn-google btn-block"><i class="fa fa-google-plus"></i> Sign up with Google</a>
+											<a class="btn  btn-social btn-facebook btn-block mt-2"><i class="fa fa-facebook"></i> Sign in with Facebook</a>
+										</div> -->
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="log-wrapper ">
+										<div class="log-wrapper text-left ">
+											<p>特别提醒：<br>1、本程序页面仅供测试演示使用，请大家避免使用大额支付
+												<br>2、邮箱必须填写，手机号可选填写，用于接收订单结果「不会对外公布」
+												<br>3、所有测试支付不做退还，请您悉知.
+												<br>交流QQ群：648120877
+												<hr>
+												<br>1、本程序仅提供一个用于个人支付收款的简单工具，若您需要个人实时大量处理数据，就不用往下看了。
+												<br>2、本程序最终逻辑还是人工手动审核，只不过是简化了很多流程，适合每天流量较小的个人使用。
+												<br>3、完全公开，无须担心封号！
+											</p>
+												
+											<a class="btn btn-primary mt-3" target="_blank" href="{:url('Index/order')}">查看支付结果</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!--Jquery.min js-->
+		<script src="__STATIC__/index/assets/js/jquery.min.js"></script>
+
+		<!--popper js-->
+		<script src="__STATIC__/index/assets/js/popper.js"></script>
+
+		<!--Tooltip js-->
+		<script src="__STATIC__/index/assets/js/tooltip.js"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="__STATIC__/index/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!--Jquery.nicescroll.min js-->
+		<script src="__STATIC__/index/assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+		<!--Scroll-up-bar.min js-->
+		<script src="__STATIC__/index/assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+		<script src="__STATIC__/index/assets/js/moment.min.js"></script>
+
+		<!--mCustomScrollbar js-->
+		<script src="__STATIC__/index/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!--Sidemenu js-->
+		<script src="__STATIC__/index/assets/plugins/toggle-menu/sidemenu.js"></script>
+
+		<!--Scripts js-->
+		<script src="__STATIC__/index/assets/js/scripts.js"></script>
+
+	</body>
+</html>

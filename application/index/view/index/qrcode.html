@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>支付确认页面</title>
+		<!--favicon -->
+		<link rel="icon" href="__STATIC__/index/favicon.ico" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/bootstrap/css/bootstrap.min.css">
+		
+		<!--Icons css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/css/icons.css">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/css/style.css">
+
+		<!--mCustomScrollbar css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="__STATIC__/index/assets/plugins/toggle-menu/sidemenu.css">
+
+	</head>
+
+	<body class="bg-primary">
+		<div id="app">
+			<section class="section">
+				<div class="container">
+					<div class="row">
+						<div class="single-page construction-bg single-pageimage cover-image" data-image-src="__STATIC__/index/assets/img/news/02.jpg">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="wrapper wrapper2">
+										<form  class="card-body" tabindex="500">
+                                            <h3>支付金额：{$order_info.d_price}元<br>支付备注：{$order_info.rand_num}</h3>
+											
+											<p class="text-dark mb-0">
+                                                <img width="100%" src="__STATIC__/paycode/{$order_info.qrcode}">
+                                            </p>
+											<h3>{$order_info.pay_name}</h3>
+										</form>
+										<div class="card-body border-top">
+                                            <a id="btn" href="#" class="btn btn-primary btn-block" disabled="disabled">等待支付</a>									
+                                            <a href="{:url('Pay/order2',['pid'=>$order_info.pid * $config.o_num2,'p_type'=>0])}" class="btn btn-danger btn-block">算了，不想支付</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="log-wrapper ">
+										<div class="log-wrapper text-left ">
+											<p>特别提醒：<br>1、支付备注码必须跟页面显示的保持一致，否则将不能成功到账！
+												<br>2、为避免网络问题或者其他误操作导致本页面丢失的话，可以先保存该页面网址。
+												<br>3、若已经确认订单，本页面将无法打开。
+												<br>4、请不要恶意提交订单.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</section>
+		</div>
+        <script>
+            var tim=9;
+            function aaa(){
+              var btnn=document.getElementById("btn");
+              if(tim<=0)
+              {
+                a_con="我已支付";
+                $("#btn").text(a_con);
+                $('#btn').attr('href',"{:url('Pay/order2',['pid'=>$order_info.pid * $config.o_num2,'p_type'=>1])}"); 
+                btnn.disabled="";
+              }
+              else
+              {
+                b_con="请扫码支付，还剩"  +tim+"秒";
+                $("#btn").text(b_con);
+                tim--;
+              }
+            }
+            setInterval("aaa()",1000);
+          </script>
+		<!--Jquery.min js-->
+		<script src="__STATIC__/index/assets/js/jquery.min.js"></script>
+
+		<!--popper js-->
+		<script src="__STATIC__/index/assets/js/popper.js"></script>
+
+		<!--Tooltip js-->
+		<script src="__STATIC__/index/assets/js/tooltip.js"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="__STATIC__/index/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!--Jquery.nicescroll.min js-->
+		<script src="__STATIC__/index/assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+		<!--Scroll-up-bar.min js-->
+		<script src="__STATIC__/index/assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+		<script src="__STATIC__/index/assets/js/moment.min.js"></script>
+
+		<!--mCustomScrollbar js-->
+		<script src="__STATIC__/index/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!--Sidemenu js-->
+		<script src="__STATIC__/index/assets/plugins/toggle-menu/sidemenu.js"></script>
+
+		<!--Scripts js-->
+		<script src="__STATIC__/index/assets/js/scripts.js"></script>
+
+	</body>
+</html>
